@@ -25,4 +25,8 @@ export async function run(client, message) {
 export const config = {
   name: 'meme',
   aliases: [],
+  usage: '!meme',
+  description: 'Show a meme',
+  noalias: 'No aliases',
+  accessibility: 'Members',
 };

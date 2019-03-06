@@ -25,4 +25,8 @@ export async function run(client, message) {
 export const config = {
   name: 'cat',
   aliases: [],
+  usage: '!cat',
+  description: 'Show a picture of a cat',
+  noalias: 'No aliases',
+  accessibility: 'Members',
 };

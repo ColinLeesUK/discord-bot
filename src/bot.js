@@ -1,9 +1,8 @@
 import { Client, Collection } from 'discord.js';
 import { readdir } from 'fs';
-import config, { name, token } from './config.json';
+import { prefix, name, token } from './config.json';
 
 const client = new Client();
-const { prefix } = config;
 
 client.on('ready', async () => {
   console.log(`${client.user.username} is online!`);
@@ -23,12 +22,14 @@ readdir('./src/commands', (err, files) => { // eslint-disable-line global-requir
     return console.log('[LOGS] Couldn\'t find Commands');
   }
 
-  jsfile.forEach((f) => {
-    const pull = require(`./commands/${f}`);
-    client.commands.set(pull.config.name, pull);
-    pull.config.aliases.forEach((alias) => {
-      client.aliases.set(alias, name);
-    });
+  return jsfile.forEach((f) => {
+    import(`./commands/${f}`) // eslint-disable-line
+      .then((file) => {
+        client.commands.set(file.config.name, file);
+        file.config.aliases.forEach((alias) => {
+          client.aliases.set(alias, name);
+        });
+      });
   });
 });
 
@@ -39,6 +40,7 @@ client.on('message', async (message) => {
 
   const messageArray = message.content.split(' ');
   const cmd = messageArray[0];
+  const args = messageArray.slice(1);
 
   if (!message.content.startsWith(prefix)) {
     return;
@@ -48,7 +50,7 @@ client.on('message', async (message) => {
                    || client.commands.get(client.aliases.get(cmd.slice(prefix.length)));
 
   if (commandFile) {
-    commandFile.run(client, message);
+    commandFile.run(client, message, args);
   }
 });
 

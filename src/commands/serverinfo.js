@@ -20,4 +20,8 @@ export async function run(client, message) {
 export const config = {
   name: 'serverinfo',
   aliases: [],
+  usage: '!serverinfo',
+  description: 'Display information about the server',
+  noalias: 'No aliases',
+  accessibility: 'Members',
 };

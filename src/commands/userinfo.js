@@ -20,4 +20,8 @@ export async function run(client, message) {
 export const config = {
   name: 'userinfo',
   aliases: [],
+  usage: '!userinfo',
+  description: 'Display information about the user',
+  noalias: 'No aliases',
+  accessibility: 'Members',
 };
