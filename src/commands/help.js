@@ -28,19 +28,20 @@ module.exports.run = async (client, message, args) => {
                   \n**> Aliases:** ${command.config.noalias || command.config.aliases}`));
   }
 
+  message.delete();
   message.channel.send(new RichEmbed()
     .setColor(pink)
     .setAuthor('Help command', message.guild.iconURL)
-    .setDescription(`${message.author.username} check your DMs!`));
+    .setDescription(`${message.author.username} check your DMs!`))
+    .then(_ => _.delete(10000));
 
-  return message.channel.send(new RichEmbed()
+  return message.author.send(new RichEmbed()
     .setColor(cyan)
     .setAuthor('TestBOT Help', message.guild.iconURL)
     .setThumbnail(client.user.displayAvatarURL)
     .setDescription(`These are the aviable commands for the TestBOT!\nThe bot prefix is: ${prefix}`)
     .addField('Commands:', client.commands.map(c => `\`\`${c.config.name}\`\``))
-    .setFooter('TestBOT', client.user.displayAvatarURL))
-    .then(_ => _.delete(10000));
+    .setFooter('TestBOT', client.user.displayAvatarURL));
 };
 
 module.exports.config = {
