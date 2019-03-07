@@ -3,11 +3,7 @@ import { readdir } from 'fs';
 import { prefix, name, token } from './config.json';
 
 const client = new Client();
-
-client.on('ready', async () => {
-  console.log(`${client.user.username} is online!`);
-  return client.user.setActivity('you', { type: 'WATCHING' });
-});
+require('./util/eventHandler').default(client);
 
 client.commands = new Collection();
 client.aliases = new Collection();
