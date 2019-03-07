@@ -14,6 +14,7 @@ Command | Args | Description |
 !meme | - | Display a meme |
 !serverinfo | - | Display information about the server |
 !userinfo | - | Display information about the server |
+!mute | [@user] [reason] | Mute a user in the server and give a reason |
 !help | [command] | Show what commands are available and how to use them |
 
 ---
