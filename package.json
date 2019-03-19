@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/bot.js",
     "start:dev": "nodemon --exec babel-node src/bot.js",
-    "lint": "npx eslint src/** --ext .js"
+    "lint": "npx eslint src --ext js"
   },
   "pre-commit": [
     "lint"
