@@ -1,6 +1,6 @@
 SHARKS Discord Bot 
 ============
-[![GitHub Stars](https://img.shields.io/github/stars/ColinLeesUK/discord-bot.svg)](https://github.com/IgorAntun/node-chat/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/ColinLeesUK/discord-bot.svg)](https://github.com/IgorAntun/node-chat/issues) [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/IgorAntun/node-chat)
+[![GitHub Stars](https://img.shields.io/github/stars/ColinLeesUK/discord-bot.svg)](https://github.com/ColinLeesUK/discord-bot/stargazers) [![GitHub Issues](https://img.shields.io/github/issues/ColinLeesUK/discord-bot.svg)](https://github.com/ColinLeesUK/discord-bot/issues) [![Current Version](https://img.shields.io/badge/version-1.2.0-green.svg)](https://github.com/ColinLeesUK/discord-bot)
 
 This is a node.js Discord bot powered by Discord.js that provides silly functions for our SHARKS Discord server, such as cat pictures, dog pictures, memes, etc.
 
@@ -15,6 +15,8 @@ Command | Args | Description |
 !serverinfo | - | Display information about the server |
 !userinfo | - | Display information about the server |
 !mute | [@user] [reason] | Mute a user in the server and give a reason |
+!unmute | [@user] [reason] | Unmute a user in the server and give a reason |
+!say | [#channel] [content] | Send a message to a channel |
 !help | [command] | Show what commands are available and how to use them |
 
 ---
